@@ -1,7 +1,5 @@
 import streamlit as st
 import requests
-if st.session_state["UserChat"] or st.session_state["FriendReply"] is None:
- st.warning("Not set yet")
 st.header("ChatBot")
 def Chat_Ai(User_Chat):
   api_url="https://openrouter.ai/api/v1/chat/completions"
