@@ -60,7 +60,6 @@ Your primary goal is to make the user feel understood, supported, comfortable, a
   result=response.json()
   if "choices" in result:
     return result["choices"][0]["message"]["content"]
-Chat_History=[]
 User_Chat=st.chat_input("Chat with your friend")
 if User_Chat is not None:
   with st.chat_message("user"):
@@ -71,8 +70,4 @@ if User_Chat is not None:
     with st.chat_message("Assistant"):
       st.markdown(answer)
       st.session_state["FriendReply"]=answer
-if st.session_state["UserChat"] or st.session_state["FriendReply"] is not None:
-  Chat_History.append(st.session_state["UserChat"])
-  Chat_History.append(st.session_state["FriendReply"])
-st.markdown(Chat_History)
-st.write(len(Chat_History))
+
