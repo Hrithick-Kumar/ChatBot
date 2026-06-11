@@ -18,10 +18,11 @@ def Chat_Ai(User_Chat):
   if "choices" in result:
     return result["choices"][0]["message"]["content"]
 User_Chat=st.chat_input("Chat with your friend")
-with st.chat_message("user"):
-  st.markdown(User_Chat)
-with st.spinner("Replying"):
-  answer=Chat_Ai(User_Chat)
-  with st.chat_message("Assistant"):
-    st.markdown(answer)
+if User_Chat is not None:
+  with st.chat_message("user"):
+    st.markdown(User_Chat)
+  with st.spinner("Replying"):
+    answer=Chat_Ai(User_Chat)
+    with st.chat_message("Assistant"):
+      st.markdown(answer)
     
