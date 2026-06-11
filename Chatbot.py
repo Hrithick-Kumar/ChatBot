@@ -71,8 +71,5 @@ if User_Chat is not None:
       st.markdown(answer)
       st.session_state["FriendReply"]=answer
 if st.session_state["UserChat"] or st.session_state["FriendReply"] is not None:
-  Chat_History={
-         "User":st.session_state["UserChat"],
-         "Friend":st.session_state["FriendReply"]
-      }
+  Chat_History=[st.session_state["UserChat"],st.session_state["FriendReply"]]
   st.markdown(Chat_History)
