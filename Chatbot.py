@@ -74,4 +74,4 @@ if User_Chat is not None:
 if st.session_state["UserChat"] or st.session_state["FriendReply"] is not None:
   Chat_History.append(st.session_state["UserChat"])
   Chat_History.append(st.session_state["FriendReply"])
-  st.markdown(Chat_History)
+st.markdown(Chat_History)
