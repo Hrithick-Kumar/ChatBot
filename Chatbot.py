@@ -66,10 +66,8 @@ User_Chat=st.chat_input("Chat with your friend")
 if User_Chat:
   with st.chat_message("user"):
     st.markdown(User_Chat)
-    st.session_state["messages"]=st.session_state["messages"].append({"role":"user","content":User_Chat})
   with st.spinner("Replying"):
     answer=Chat_Ai(User_Chat)
     with st.chat_message("Assistant"):
       st.markdown(answer)
-      st.session_state["messages"]=st.session_state["messages"].append({"role":"system","content":answer})
- 
+      
