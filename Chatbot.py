@@ -62,12 +62,18 @@ Your primary goal is to make the user feel understood, supported, comfortable, a
   result=response.json()
   if "choices" in result:
     return result["choices"][0]["message"]["content"]
+for message in st.session_state.messages:
+    with st.chat_message(message["role"]):
+        st.markdown(message["content"])
+st.chat_message(message["role"]): st.markdown(message["content"])
 User_Chat=st.chat_input("Chat with your friend")
 if User_Chat:
+    st.session_state.messages.append( {"role": "user", "content":User_Chat})
   with st.chat_message("user"):
     st.markdown(User_Chat)
   with st.spinner("Replying"):
     answer=Chat_Ai(User_Chat)
+  st.session_state.messages.append( {"role": "Assistant", "content":answer})
     with st.chat_message("Assistant"):
       st.markdown(answer)
       
