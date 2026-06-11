@@ -65,7 +65,7 @@ if User_Chat is not None:
   with st.chat_message("user"):
     st.markdown(User_Chat)
     st.session_state["UserChat"]=User_Chat
-    st.markdown(st.session_state["UserChat"]
+    st.markdown(st.session_state["UserChat"])
   with st.spinner("Replying"):
     answer=Chat_Ai(User_Chat)
     with st.chat_message("Assistant"):
