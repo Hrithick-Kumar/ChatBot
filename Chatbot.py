@@ -70,8 +70,9 @@ if User_Chat is not None:
     with st.chat_message("Assistant"):
       st.markdown(answer)
       st.session_state["FriendReply"]=answer
-Chat_History={
+if st.session_state["UserChat"] or st.session_state["FriendReply"] is not None:
+  Chat_History={
          "User":st.session_state["UserChat"],
          "Friend":st.session_state["FriendReply"]
       }
-st.markdown(Chat_History)
+  st.markdown(Chat_History)
