@@ -65,7 +65,6 @@ Your primary goal is to make the user feel understood, supported, comfortable, a
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
-st.chat_message(message["role"]): st.markdown(message["content"])
 User_Chat=st.chat_input("Chat with your friend")
 if User_Chat:
     st.session_state.messages.append( {"role": "user", "content":User_Chat})
